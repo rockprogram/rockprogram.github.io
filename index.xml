@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>矩阵</title>
+    <link>https://rockprogram.github.io/</link>
+    <description>Recent content on 矩阵</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Jul 2021 13:29:06 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jul 2021 13:29:06 +0800</lastBuildDate><atom:link href="https://rockprogram.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>要你命3000</title>
-      <link>http://example.org/posts/config3000/</link>
+      <link>https://rockprogram.github.io/posts/config3000/</link>
       <pubDate>Tue, 06 Jul 2021 13:29:06 +0800</pubDate>
       
-      <guid>http://example.org/posts/config3000/</guid>
+      <guid>https://rockprogram.github.io/posts/config3000/</guid>
       <description>工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。
 Java   maven配置镜像，编辑settings.xml，
 &amp;lt;mirrors&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;id&amp;gt;alibaba&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt; &amp;lt;name&amp;gt;aliyun maven&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.aliyun.com/nexus/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; &amp;lt;/mirrors&amp;gt;   Python   pip下载速度慢，需要一个国内镜像源，编辑~/.pip/pip.conf
