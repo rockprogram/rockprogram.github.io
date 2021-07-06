@@ -6,9 +6,18 @@
     <description>Recent content on 矩阵</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Jul 2021 14:40:20 +0800</lastBuildDate><atom:link href="https://rockprogram.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jul 2021 14:44:24 +0800</lastBuildDate><atom:link href="https://rockprogram.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Electromobile</title>
+      <title>JVM</title>
+      <link>https://rockprogram.github.io/posts/jvm/</link>
+      <pubDate>Tue, 06 Jul 2021 14:44:24 +0800</pubDate>
+      
+      <guid>https://rockprogram.github.io/posts/jvm/</guid>
+      <description>示例代码 public class Math { public static int initData = 666; public static User user = new User(); public int compute() { int a = 1; int b = 2; int c = (a + b) * 10; return c; } public static void main(String[] args) { Math math = new Math(); math.compute(); } } JVM内存结构 @startuml rectangle &amp;quot;JVM&amp;quot; { rectangle &amp;quot;堆&amp;quot; rectangle &amp;quot;栈&amp;quot; rectangle &amp;quot;本地方法栈&amp;quot; as localMethod rectangle &amp;quot;方法区（元空间）&amp;quot; as methodArea rectangle &amp;quot;程序计数器&amp;quot; as program note bottom of program 记录代码执行的行数，以便多线程切换 end note note bottom of methodArea 常量，静态变量，类元信息 end note note bottom of localMethod 调用C语言 end note } @enduml @startuml @startuml rectangle &amp;quot;线程&amp;quot; { rectangle &amp;quot;栈（FILO）&amp;quot; { rectangle &amp;quot;compute函数栈帧&amp;quot; as compute rectangle &amp;quot;main函数栈帧&amp;quot; as main compute -down-&amp;gt; main } rectangle &amp;quot;程序计数器&amp;quot; rectangle &amp;quot;本地方法栈&amp;quot; } @enduml @startuml rectangle &amp;quot;栈帧&amp;quot; { rectangle &amp;quot;局部变量表（a，b，c）&amp;quot; rectangle &amp;quot;操作数栈（局部变量的值）&amp;quot; rectangle &amp;quot;动态链接&amp;quot; rectangle &amp;quot;方法出口&amp;quot; as method note right of method 方法执行完成回到被调用的地方 end note } @enduml 垃圾回收   堆内存结构</description>
+    </item>
+    
+    <item>
+      <title>电动汽车展望</title>
       <link>https://rockprogram.github.io/posts/electromobile/</link>
       <pubDate>Tue, 06 Jul 2021 14:40:20 +0800</pubDate>
       

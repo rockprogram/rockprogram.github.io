@@ -101,8 +101,23 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://rockprogram.github.io/posts/jvm/" class="link black dim">
+        JVM
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      示例代码 public class Math { public static int initData = 666; public static User user = new User(); public int compute() { int a = 1; int b = 2; int c = (a + b) * 10; return c; } public static void main(String[] args) { Math math = new Math(); math.compute(); } } JVM内存结构 @startuml rectangle &quot;JVM&quot; { rectangle &quot;堆&quot; rectangle &quot;栈&quot; rectangle &quot;本地方法栈&quot; as localMethod rectangle &quot;方法区（元空间）&quot; as methodArea rectangle &quot;程序计数器&quot; as program note bottom of program 记录代码执行的行数，以便多线程切换 end note note bottom of methodArea 常量，静态变量，类元信息 end note note bottom of localMethod 调用C语言 end note } @enduml @startuml @startuml rectangle &quot;线程&quot; { rectangle &quot;栈（FILO）&quot; { rectangle &quot;compute函数栈帧&quot; as compute rectangle &quot;main函数栈帧&quot; as main compute -down-&gt; main } rectangle &quot;程序计数器&quot; rectangle &quot;本地方法栈&quot; } @enduml @startuml rectangle &quot;栈帧&quot; { rectangle &quot;局部变量表（a，b，c）&quot; rectangle &quot;操作数栈（局部变量的值）&quot; rectangle &quot;动态链接&quot; rectangle &quot;方法出口&quot; as method note right of method 方法执行完成回到被调用的地方 end note } @enduml 垃圾回收   堆内存结构
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://rockprogram.github.io/posts/electromobile/" class="link black dim">
-        Electromobile
+        电动汽车展望
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
