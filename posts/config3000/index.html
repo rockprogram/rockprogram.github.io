@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>要你命3000 | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。
+Java   maven配置镜像，编辑settings.xml，
+&lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;alibaba&lt;/id&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;/mirror&gt; &lt;/mirrors&gt;   Python   pip下载速度慢，需要一个国内镜像源，编辑~/.pip/pip.conf
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/ [install] trusted-host = mirrors.aliyun.com   supervisor，强大的应用运行时管理工具
+  程序配置demo，修改/etc/supervisor/conf.d/tornado.conf：
+[program:tornado] directory=/opt/tornado command=python /opt/tornado/start.py user=guanyu autorestart=true autostart=true   命令：
+ sudo apt-get install supervisor sudo service supervisor start/stop/restart supervisorctl start/stop tornado    如果启动报错：Permission denied: file: /usr/local/lib/python2.7/socket.py，修改/etc/supervisor/supervisord.conf：
+[unix_http_server] file=/tmp/supervisor.sock ; 保持不变(the path to the socket file) chmod=0766 ; 修改权限 socket file mode (default 0700)     HEXO  常用命令  hexo new [title] 新建文章 hexo generate 生成静态文件 hexo server 启动服务器 hexo deploy 部署网站    HUGO   新建文章：hugo new posts/my-first-post.">
+    <meta name="generator" content="Hugo 0.85.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="要你命3000" />
+<meta property="og:description" content="工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。
+Java   maven配置镜像，编辑settings.xml，
+&lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;alibaba&lt;/id&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;/mirror&gt; &lt;/mirrors&gt;   Python   pip下载速度慢，需要一个国内镜像源，编辑~/.pip/pip.conf
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/ [install] trusted-host = mirrors.aliyun.com   supervisor，强大的应用运行时管理工具
+  程序配置demo，修改/etc/supervisor/conf.d/tornado.conf：
+[program:tornado] directory=/opt/tornado command=python /opt/tornado/start.py user=guanyu autorestart=true autostart=true   命令：
+ sudo apt-get install supervisor sudo service supervisor start/stop/restart supervisorctl start/stop tornado    如果启动报错：Permission denied: file: /usr/local/lib/python2.7/socket.py，修改/etc/supervisor/supervisord.conf：
+[unix_http_server] file=/tmp/supervisor.sock ; 保持不变(the path to the socket file) chmod=0766 ; 修改权限 socket file mode (default 0700)     HEXO  常用命令  hexo new [title] 新建文章 hexo generate 生成静态文件 hexo server 启动服务器 hexo deploy 部署网站    HUGO   新建文章：hugo new posts/my-first-post." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/config3000/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-06T13:29:06+08:00" />
+<meta property="article:modified_time" content="2021-07-06T13:29:06+08:00" />
+
+<meta itemprop="name" content="要你命3000">
+<meta itemprop="description" content="工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。
+Java   maven配置镜像，编辑settings.xml，
+&lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;alibaba&lt;/id&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;/mirror&gt; &lt;/mirrors&gt;   Python   pip下载速度慢，需要一个国内镜像源，编辑~/.pip/pip.conf
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/ [install] trusted-host = mirrors.aliyun.com   supervisor，强大的应用运行时管理工具
+  程序配置demo，修改/etc/supervisor/conf.d/tornado.conf：
+[program:tornado] directory=/opt/tornado command=python /opt/tornado/start.py user=guanyu autorestart=true autostart=true   命令：
+ sudo apt-get install supervisor sudo service supervisor start/stop/restart supervisorctl start/stop tornado    如果启动报错：Permission denied: file: /usr/local/lib/python2.7/socket.py，修改/etc/supervisor/supervisord.conf：
+[unix_http_server] file=/tmp/supervisor.sock ; 保持不变(the path to the socket file) chmod=0766 ; 修改权限 socket file mode (default 0700)     HEXO  常用命令  hexo new [title] 新建文章 hexo generate 生成静态文件 hexo server 启动服务器 hexo deploy 部署网站    HUGO   新建文章：hugo new posts/my-first-post."><meta itemprop="datePublished" content="2021-07-06T13:29:06+08:00" />
+<meta itemprop="dateModified" content="2021-07-06T13:29:06+08:00" />
+<meta itemprop="wordCount" content="488">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="要你命3000"/>
+<meta name="twitter:description" content="工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。
+Java   maven配置镜像，编辑settings.xml，
+&lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;alibaba&lt;/id&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;/mirror&gt; &lt;/mirrors&gt;   Python   pip下载速度慢，需要一个国内镜像源，编辑~/.pip/pip.conf
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/ [install] trusted-host = mirrors.aliyun.com   supervisor，强大的应用运行时管理工具
+  程序配置demo，修改/etc/supervisor/conf.d/tornado.conf：
+[program:tornado] directory=/opt/tornado command=python /opt/tornado/start.py user=guanyu autorestart=true autostart=true   命令：
+ sudo apt-get install supervisor sudo service supervisor start/stop/restart supervisorctl start/stop tornado    如果启动报错：Permission denied: file: /usr/local/lib/python2.7/socket.py，修改/etc/supervisor/supervisord.conf：
+[unix_http_server] file=/tmp/supervisor.sock ; 保持不变(the path to the socket file) chmod=0766 ; 修改权限 socket file mode (default 0700)     HEXO  常用命令  hexo new [title] 新建文章 hexo generate 生成静态文件 hexo server 启动服务器 hexo deploy 部署网站    HUGO   新建文章：hugo new posts/my-first-post."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/config3000/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/config3000/&amp;text=%e8%a6%81%e4%bd%a0%e5%91%bd3000" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/config3000/&amp;title=%e8%a6%81%e4%bd%a0%e5%91%bd3000" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">要你命3000</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-07-06T13:29:06+08:00">July 6, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。</p>
+<h2 id="java">Java</h2>
+<ol>
+<li>
+<p>maven配置镜像，编辑settings.xml，</p>
+<pre><code>&lt;mirrors&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;alibaba&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;aliyun maven&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+    &lt;/mirror&gt;
+&lt;/mirrors&gt;
+</code></pre></li>
+</ol>
+<h2 id="python">Python</h2>
+<ol>
+<li>
+<p>pip下载速度慢，需要一个国内镜像源，编辑~/.pip/pip.conf</p>
+<pre><code>[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+
+[install]
+trusted-host = mirrors.aliyun.com
+</code></pre></li>
+<li>
+<p>supervisor，强大的应用运行时管理工具</p>
+<ol>
+<li>
+<p>程序配置demo，修改/etc/supervisor/conf.d/tornado.conf：</p>
+<pre><code>[program:tornado]
+directory=/opt/tornado
+command=python /opt/tornado/start.py
+user=guanyu
+autorestart=true
+autostart=true
+</code></pre></li>
+<li>
+<p>命令：</p>
+<ol>
+<li>sudo apt-get install supervisor</li>
+<li>sudo service supervisor start/stop/restart</li>
+<li>supervisorctl start/stop tornado</li>
+</ol>
+</li>
+<li>
+<p>如果启动报错：Permission denied: file: /usr/local/lib/python2.7/socket.py，修改/etc/supervisor/supervisord.conf：</p>
+<pre><code>[unix_http_server]
+file=/tmp/supervisor.sock   ; 保持不变(the path to the socket file)
+chmod=0766                 ; 修改权限 socket file mode (default 0700)
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h2 id="hexohttpshexoiodocs"><a href="https://hexo.io/docs/">HEXO</a></h2>
+<ol>
+<li>常用命令
+<ol>
+<li><strong>hexo new [title]</strong> 新建文章</li>
+<li><strong>hexo generate</strong> 生成静态文件</li>
+<li><strong>hexo server</strong>  启动服务器</li>
+<li><strong>hexo deploy</strong> 部署网站</li>
+</ol>
+</li>
+</ol>
+<h2 id="hugohttpsgohugoiogetting-startedquick-start"><a href="https://gohugo.io/getting-started/quick-start/">HUGO</a></h2>
+<ol>
+<li>
+<p>新建文章：hugo new posts/my-first-post.md</p>
+</li>
+<li>
+<p>启动服务器本地测试：hugo server -D</p>
+</li>
+<li></li>
+<li></li>
+</ol>
+<h2 id="linux">Linux</h2>
+<ol>
+<li>
+<p>命令行排查问题</p>
+<ol>
+<li><a href="https://coolshell.cn/articles/9070.html">AWK</a>
+<ol>
+<li>求和：<strong>awk &lsquo;{sum += $1};END {print sum}&rsquo; file</strong></li>
+<li>指定分隔符：<strong>awk -F &lsquo;char&rsquo;</strong></li>
+</ol>
+</li>
+<li><a href="https://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858385.html">sort</a>
+<ol>
+<li>指定分隔符：<strong>-t &lsquo;char&rsquo;</strong></li>
+<li>指定按列排序：<strong>-k n</strong></li>
+<li>默认按字母顺序排序，如果要按数字排序：<strong>-n</strong></li>
+<li>默认升序排序，如果需要降序排序：<strong>-r</strong></li>
+</ol>
+</li>
+<li>uniq
+<ol>
+<li>uniq通常和sort合用，必须保证重复行是相邻的。</li>
+<li>忽略大小写字母：<strong>-i</strong></li>
+<li>计数：<strong>-c</strong></li>
+</ol>
+</li>
+<li><a href="https://www.cnblogs.com/peida/archive/2012/12/10/2810755.html">du</a>
+<ol>
+<li>-m 以MB为单位输出</li>
+<li>&ndash;max-depth=1 *  当前目录所有文件</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Ubuntu修改时区</p>
+<ol>
+<li>tzselect</li>
+<li>sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime</li>
+</ol>
+</li>
+</ol>
+<h2 id="git">Git</h2>
+<ol>
+<li>
+<p>快捷键映射，编辑~/.gitconfig：</p>
+<pre><code>[alias]
+    co = checkout
+    ci = commit
+    br = branch
+    st = status
+    mg = merge
+</code></pre></li>
+<li>
+<p>命令</p>
+<ol>
+<li>查看commit提交中的文件删除记录：git log &ndash;diff-filter=D &ndash;summary</li>
+</ol>
+</li>
+</ol>
+<h2 id="翻墙">翻墙</h2>
+<ol>
+<li>
+<p><a href="https://viencoding.com/article/122">ssr</a></p>
+</li>
+<li>
+<p>国外appStore<a href="https://appledi.github.io">账号</a>：id1@appledi.com/Appledi123</p>
+</li>
+<li>
+<p><a href="https://www.textarea.com/ExpectoPatronum/shiyong-shadowsocks-kexue-shangwang-265/">shadowsocks</a></p>
+<ol>
+<li>pip install shadowsocks</li>
+<li>vim /etc/shadowsocks.json
+<pre><code>{
+    &quot;server&quot;: &quot;0.0.0.0&quot;,
+    &quot;server_port&quot;: 9527,
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;: 1080,
+    &quot;password&quot;: &quot;guanyu&quot;,
+    &quot;timeout&quot;: 300,
+    &quot;method&quot;: &quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;: true
+}
+</code></pre></li>
+<li>ssserver -c /etc/shadowsocks.json -d start/stop</li>
+<li>/var/log/shadowsocks.log</li>
+</ol>
+</li>
+<li>
+<p><a href="https://tlanyan.me/trojan-tutorial/">trojan</a></p>
+<ol>
+<li>
+<p>服务器安装：bash &lt;(curl -sL <a href="https://raw.githubusercontent.com/hijkpw/scripts/master/trojan.sh">https://raw.githubusercontent.com/hijkpw/scripts/master/trojan.sh</a>)</p>
+</li>
+<li>
+<p><a href="https://tlanyan.me/use-lets-encrypt-certificate/">获取免费证书</a></p>
+<ol>
+<li>sudo apt-get install certbot</li>
+<li>sudo sudo certbot certonly &ndash;standalone -d sourcecode.top -d <a href="http://www.sourcecode.top">www.sourcecode.top</a></li>
+<li>sudo certbot certificates</li>
+</ol>
+</li>
+<li>
+<p><a href="https://tlanyan.me/trojan-clients-download/">客户端下载</a></p>
+</li>
+<li>
+<p>mac启动方法：./trojan -c config.json</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="数据库">数据库</h2>
+<ol>
+<li>
+<p>UTF8字符配置，修改/etc/mysql/mysql.conf.d/mysqld.cnf：</p>
+<pre><code>[client]
+default-character-set=utf8mb4
+
+[mysqld]
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+init_connect='SET NAMES utf8mb4'
+skip-character-set-client-handshake = true
+
+[mysql]
+default-character-set = utf8mb4
+
+</code></pre></li>
+</ol>
+<h2 id="fish-shellhttpswwwjianshucomp7ffd9d1af788"><a href="https://www.jianshu.com/p/7ffd9d1af788">Fish shell</a></h2>
+<ol>
+<li>
+<p>配置config.fish：</p>
+<pre><code>set fish_greeting 'Talk is cheap. Show me the code.'
+set -g fish_user_paths &quot;/usr/local/opt/mysql@5.7/bin&quot; $fish_user_paths
+
+</code></pre></li>
+<li>
+<p>配置fish_prompt.fish:</p>
+<ol>
+<li>
+<p>Git版</p>
+<pre><code>function fish_prompt --description 'Write out the prompt'
+    # 快捷键映射
+    bind K accept-autosuggestion
+
+    #prompt
+    set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
+    set -l pwd (echo -n $PWD | sed &quot;s/^$home_escaped/~/&quot; | sed 's/ /%20/g')
+    set -l prompt_symbol ''
+    switch $USER
+        case root toor
+            set prompt_symbol '#'
+        case '*'
+            set prompt_symbol '$'
+    end
+
+    # show git branch
+    if not set -q __git_cb
+        set __git_cb &quot;:&quot;(set_color brown)(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)&quot;&quot;
+    end
+
+    printf &quot;[%s@%s %s%s%s]%s%s&quot; $USER (prompt_hostname) (set_color $fish_color_cwd) $pwd (set_color normal) $__git_cb $prompt_symbol
+end
+</code></pre></li>
+<li>
+<p>标准版</p>
+<pre><code>function fish_prompt --description 'Write out the prompt'
+    # 快捷键映射
+    bind K accept-autosuggestion
+    set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
+    set -l pwd (echo -n $PWD | sed &quot;s/^$home_escaped/~/&quot; | sed 's/ /%20/g')
+    set -l prompt_symbol ''
+    switch &quot;$USER&quot;
+        case root toor
+            set prompt_symbol '#'
+        case '*'
+            set prompt_symbol '$'
+    end
+    printf &quot;[%s@%s %s%s%s]%s &quot; $USER (prompt_hostname) (set_color $fish_color_cwd) $pwd (set_color normal) $prompt_symbol
+end
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h2 id="系统工具">系统工具</h2>
+<ol>
+<li><a href="https://www.resilio.com/individuals/">局域网同步数据</a></li>
+</ol>
+<h2 id="vim">Vim</h2>
+<ol>
+<li>
+<p>基本配置.vimrc：</p>
+<pre><code>set encoding=UTF-8
+
+&quot;显示行号
+set nu
+
+&quot;启动时隐去援助提示
+set shortmess=atI
+
+&quot;语法高亮
+syntax on
+
+&quot;使用vim的键盘模式
+&quot;set nocompatible
+
+&quot;不需要备份
+set nobackup
+
+&quot;没有保存或文件只读时弹出确认
+set confirm
+
+&quot;鼠标可用
+set mouse=a
+
+&quot;tab缩进
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+&quot;文件自动检测外部更改
+set autoread
+
+&quot;文件自动缩进
+set cindent
+
+&quot;自动对齐
+set autoindent
+
+&quot;智能缩进
+set smartindent
+
+&quot;高亮查找匹配
+set hlsearch
+
+&quot;背景色
+set background=dark
+
+&quot;显示匹配
+set showmatch
+
+&quot;显示标尺，就是在右下角显示光标位置
+set ruler
+
+&quot;去除vi的一致性
+set nocompatible
+
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+&quot;不要闪烁
+set novisualbell
+
+&quot;启动显示状态行
+set laststatus=2
+
+&quot;浅色显示当前行
+autocmd InsertLeave * se nocul
+
+&quot;用浅色高亮当前行
+autocmd InsertEnter * se cul
+
+&quot;显示输入的命令
+set showcmd
+
+&quot;被分割窗口之间显示空白
+set fillchars=vert:/
+</code></pre></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  My New Hugo Site 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

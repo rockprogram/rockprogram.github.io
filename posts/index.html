@@ -26,19 +26,19 @@
 
     
     
-      <link href="/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
-      <link href="/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
       
     
     
-    <meta property="og:title" content="My New Hugo Site" />
+    <meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://example.org/" />
+<meta property="og:url" content="http://example.org/posts/" />
 
-<meta itemprop="name" content="My New Hugo Site">
+<meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="My New Hugo Site"/>
+<meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
 
 	
@@ -83,7 +83,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          My New Hugo Site
+          Posts
         </h1>
         
       </div>
@@ -93,47 +93,20 @@
 
     <main class="pb7" role="main">
       
-
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
-  </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
       
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
-        
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://example.org/posts/config3000/" class="color-inherit dim link">
-            要你命3000
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/config3000/" class="link black dim">
+        要你命3000
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      工欲善其事，必先利其器，这里专门记录各种工程搭建经验、工具使用技巧。古代剑客对战，近代牛仔决斗，拼的都是谁出手快，想要出手快，就要提前做好各种准备。这就是我写本篇文章的初衷。
 Java   maven配置镜像，编辑settings.xml，
 &lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;alibaba&lt;/id&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;/mirror&gt; &lt;/mirrors&gt;   Python   pip下载速度慢，需要一个国内镜像源，编辑~/.pip/pip.conf
 [global] index-url = http://mirrors.aliyun.com/pypi/simple/ [install] trusted-host = mirrors.aliyun.com   supervisor，强大的应用运行时管理工具
@@ -141,22 +114,12 @@ Java   maven配置镜像，编辑settings.xml，
 [program:tornado] directory=/opt/tornado command=python /opt/tornado/start.py user=guanyu autorestart=true autostart=true   命令：
  sudo apt-get install supervisor sudo service supervisor start/stop/restart supervisorctl start/stop tornado    如果启动报错：Permission denied: file: /usr/local/lib/python2.7/socket.py，修改/etc/supervisor/supervisord.conf：
 [unix_http_server] file=/tmp/supervisor.sock ; 保持不变(the path to the socket file) chmod=0766 ; 修改权限 socket file mode (default 0700)     HEXO  常用命令  hexo new [title] 新建文章 hexo generate 生成静态文件 hexo server 启动服务器 hexo deploy 部署网站    HUGO   新建文章：hugo new posts/my-first-post.
-        </div>
-          <a href="http://example.org/posts/config3000/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
     </div>
   </div>
-</article>
-
-          </div>
-        
-      </section>
-
+</div>
+</div>
       
-
-      </div>
-  
+    </section></article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
